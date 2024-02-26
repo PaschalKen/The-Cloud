@@ -1,0 +1,260 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+  background-color: rgb(12, 34, 59);
+  box-shadow: 3px 3px 5px rgba(253, 253, 253, 0.1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8.8vh;
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav li {
+  height: 50px;
+}
+
+nav a {
+  height: 100%;
+    height: 8.8vh;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: green;
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sidebar li {
+  width: 100%;
+}
+
+.sidebar a {
+  width: 100%;
+  color: black;
+}
+
+nav .sidebar a:hover {
+  background-color: #f0f0f0;
+}
+
+.menuButton {
+  display: none;;
+}
+
+nav ul .menuButton a svg {
+    fill: white;
+}
+
+h2 {
+  color: black;
+  text-align: center;
+  margin: 15vh 0 2vh 0;
+  justify-content: center;
+  left: 30%;
+}
+
+#searchBar,  #resSearchBar {
+    width: 20%;
+    height: 3rem;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 12px;
+    margin: 2% 0 2% 40%;
+    color: rgb(12, 34, 59);
+    text-align: center;
+    justify-content: center;
+}
+
+main .category, main .resource{
+  height: 18rem;
+  border: none;
+  border-radius: 12px;
+  margin: 7%;
+  box-shadow: 0 0 0.625em rgba(78, 71, 71, 0.6);
+  color: rgb(12, 34, 59);
+  text-align: center;
+  justify-content: center;
+}
+
+main .category h3, main .resource h3 {
+  padding-top: 20px;
+  color: black;
+  text-align: center;
+  margin: 4% 0 0 0;
+  justify-content: center;
+}
+
+p {
+  color: black;
+  text-align: center;
+  margin: 5% 0 2% 0;
+  justify-content: center;
+  font-weight: 600;
+
+}
+
+div {
+  color: black;
+  text-align: center;
+  margin: 10% 0 2% 0;
+  justify-content: center;
+  font-weight: 600;
+}
+
+main {
+    justify-content: center;
+    display: grid;
+  grid-template-columns: repeat(3, 23rem);
+}
+
+nav ul .searchButton svg {
+    fill: white;
+}
+
+nav ul .searchButton a {
+    padding: 0;
+}
+
+.searchBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.searchBar .closeSearch {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.tools {
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(141, 141, 148);
+  width: 60%;
+  height: 4vh;
+  border-radius: 20px;
+  align-items: center;
+  margin: 0 20%;
+}
+
+.tools .button {
+  height: 4vh;
+  width: 50%;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(141, 141, 148);
+  font-weight: 600;
+}
+
+.tools .active {
+  background-color: rgb(12, 34, 59);
+  color: white;
+}
+
+  .hideOnDesktop {
+    display: none;
+  }
+
+
+@media (max-width: 880px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  h2 {
+  color: black;
+  text-align: center;
+  margin: 11vh 0 3% 0;
+  justify-content: center;
+  left: 30%;
+}
+
+main {
+    justify-content: center;
+    display: grid;
+  grid-template-columns: repeat(1, 22rem);
+}
+
+  .menuButton {
+    display: block;
+  }
+}
+
+#searchBar, #resSearchBar {
+    width: 60%;
+    height: 3rem;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 12px;
+    margin: 2% 0 2% 20%;
+    color: rgb(12, 34, 59);
+    text-align: center;
+    justify-content: center;
+}
+
+@media (max-width: 500px) {
+  .sidebar {
+    width: 100%;
+  }
+}
