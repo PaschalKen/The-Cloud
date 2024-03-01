@@ -18,38 +18,38 @@ export default async function getApps() {
   }
 }
 
-export async function getAppDetails(appName) {
-  try {
-    const response = await fetch(`${path}/${encodeURIComponent(appName)}`);
-    if (!response.ok) {
-      throw new Error(
-        `Failed to fetch details for ${appName}: ${response.statusText}`
-      );
-    }
-    const applicationDetails = await response.json();
-    return applicationDetails;
-  } catch (error) {
-    console.error(`Error fetching details for ${appName}:`, error);
-    throw error; // Re-throw the error to propagate it to the caller
-  }
-}
+// export async function getAppDetails(appName) {
+//   try {
+//     const response = await fetch(`${path}/${encodeURIComponent(appName)}`);
+//     if (!response.ok) {
+//       throw new Error(
+//         `Failed to fetch details for ${appName}: ${response.statusText}`
+//       );
+//     }
+//     const applicationDetails = await response.json();
+//     return applicationDetails;
+//   } catch (error) {
+//     console.error(`Error fetching details for ${appName}:`, error);
+//     throw error; // Re-throw the error to propagate it to the caller
+//   }
+// }
 
-export async function fetchAppDetails() {
-  const appNames = await getApps();
-  // Loop through each app name and fetch details
-  for (const appName of appNames) {
-    try {
-      const details = await getAppDetails(appName);
-      return details;
-    } catch (error) {
-      // Handle error for each app if needed
-      console.error(`Error fetching details for ${appName}:`, error.message);
-    }
-  }
-}
+// export async function fetchAppDetails() {
+//   const appNames = await getApps();
+//   // Loop through each app name and fetch details
+//   for (const appName of appNames) {
+//     try {
+//       const details = await getAppDetails(appName);
+//       return details;
+//     } catch (error) {
+//       // Handle error for each app if needed
+//       console.error(`Error fetching details for ${appName}:`, error.message);
+//     }
+//   }
+// }
 
-// Call the function to initiate the process
-fetchAppDetails();
+// // Call the function to initiate the process
+// fetchAppDetails();
 
 
 

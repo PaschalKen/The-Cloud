@@ -90,7 +90,6 @@ export function renderCategories(applicationNames, searchQuery = '') {
               totals[environment] += Math.round(cost);
             }
           });
-          cardBtn.removeChild(loadingPara);
 
           // Render cost details
           detailsPara1.textContent = `Production Cost: ${totals.Production}`;
@@ -99,12 +98,15 @@ export function renderCategories(applicationNames, searchQuery = '') {
           detailsContainer.appendChild(detailsPara1);
           detailsContainer.appendChild(detailsPara2);
           detailsContainer.appendChild(detailsPara3);
+          cardBtn.removeChild(loadingPara);
+
           cardBtn.appendChild(detailsContainer);
         } catch (error) {
           cardBtn.removeChild(loadingPara);
           const errorPara = document.createElement('p');
           errorPara.textContent = 'Error fetching details';
-          cardBtn.appendChild(errorPara);
+          detailsContainer.appendChild(errorPara);
+          cardBtn.appendChild(detailsContainer);
           console.log('Error:', error);
         }
       });
@@ -175,7 +177,3 @@ resSearchBar.addEventListener('input', () => {
   const searchQuery = resSearchBar.value.trim();
   renderResources(searchQuery);
 });
-
-
-
-
